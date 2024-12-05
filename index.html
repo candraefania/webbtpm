@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB KELAS X TPM 2</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #066e06;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        h4 {
+            text-align: center;
+            color: #066e06;
+            margin-bottom: 30px;
+        }
+        p {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        button {
+            flex: 1;
+            padding: 13px 20px;
+            background-color:  #066e06;
+            color: white;
+            border: none;
+            border-radius: 1px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            font-size: 12px;
+        }
+        button:hover {
+            background-color: rgb(7, 185, 51);
+            transform: translateY(-2px);
+        }
+        .card-container {
+            display: none; /* Awalnya disembunyikan */
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .card {
+            background: #066e06;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            padding: 20px;
+            flex: 1 1 calc(25% - 20px); /* Ukuran kartu */
+            box-sizing: border-box;
+            transition: transform 0.3s;
+            text-align: center;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ccc;
+        }
+        th {
+            background-color: #066e06;
+
+            color: rgb(0, 0, 0);
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .gallery img {
+            width: calc(33% - 10px);
+            margin-bottom: 10px;
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+    <script>
+        function toggleCards(cardType) {
+            const cardContainers = ['siswaCards', 'guruCards', 'piketCards', 'strukturCards', 'gallery', 'jadwalPelajaran', 'kegiatanKelas'];
+
+            // Sembunyikan semua kartu
+            cardContainers.forEach(id => {
+                const container = document.getElementById(id);
+                if (container) {
+                    container.style.display = id === cardType ? "flex" : "none";
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    
+    <div class="container">
+        <div style="display: flex; align-items: center;justify-content: center; text-align: center;gap: 20px;">
+            <!--logo kiri-->
+            <img src="logo-smkn-1-tby.png"alt="logo kiri"style="width:85px;height:auto;">
+            <!--Tulisan-->
+            <div>
+                <h1>SMKN TAMBAKBOYO</h1>
+                <h2>WEBSITE KELAS</h2>
+                <h4> X TPM 2</h4>
+                <H3>tabun ajaran 2024/2025</H3>
+            </div>
+            <!--logo kanan-->
+            <img src="TPM LG.png"alt="logo kanan"style="width:80px; height: auto;">
+        </div>
+
+        <div class="button-container">
+            <button onclick="toggleCards('siswaCards')">Data Siswa</button>
+            <button onclick="toggleCards('guruCards')">Data Guru</button>
+            <button onclick="toggleCards('piketCards')">Piket Kelas</button>
+            <button onclick="toggleCards('strukturCards')">Struktur Kelas</button>
+            <button onclick="toggleCards('gallery')">Galeri Foto</button>
+            <button onclick="toggleCards('jadwalPelajaran')">Jadwal Pelajaran</button>
+            <button onclick="toggleCards('kegiatanKelas')">Kegiatan Kelas</button>
+        </div>
+
+        <div id="siswaCards" class="card-container">
+            <div class="card">
+                <img src="IQBAL.jpg" alt="1">
+                <h3>MOCH.IQBAL ZHANUAR</h3>
+                <p>Kelas: X TPM 2</p>
+                <P>NISN : 0091095585</P>
+                <P>TTL : 19-01-2009</P>
+                <P>ALAMAT : KARANGANYAR</P>
+            </div>
+            <div class="card">
+                <img src="FAIZ.jpg" alt="2">
+                <h3>MOCHAMMAD FAIZ NASRULLAH</h3>
+                <p>Kelas:  X TPM 2</p>
+                <P>TTL : 31-03-2008</P>
+                <P>ALAMAT : SOBONTORO</P>
+            </div>
+            <div class="card">
+                <img src="LUTFI.jpg" alt="3">
+                <h3>MUHAMMAD LUTFI ZAKI AL ANSORI</h3>
+                <p>Kelas:  X TPM 2</p>
+                <P>NISN : 0095552432</P>
+                <P>TTL : 28-01-2009</P>
+                <P>ALAMAT : MERKAWANG</P>
+            </div>
+            <div class="card">
+                <img src="mahfud.jpg" alt="4">
+                <h3>MUHAMMAD MAHFUDZ</h3>
+                <p>Kelas:  X TPM 2</p>
+                <P>NISN : 0086871328</P>
+                <P>TTL : 08-10-2008</P>
+                <P>ALAMAT : MARGOSUKO</P>
+            </div>
+            <div class="card">
+                <img src="sahrul.jpg" alt="5">
+                <h3>MUHAMMAD SAHRUL NIZAM</h3>
+                <p>Kelas:  X TPM 2</p>
+                <P>NISN : 0081019560</P>
+                <P>TTL : 06-05-2008</P>
+                <P>ALAMAT : MENTOSO</P>
+            </div>
+            <div class="card">
+                <img src="ZAINAL.jpg" alt="6">
+                <h3>MUHAMMAD ZAINAL ABIDIN</h3>
+                <p>Kelas:  X TPM 2</p>
+                <P>NISN : 0092332051</P>
+                <P>TTL : 15-07-2009</P>
+                <P>ALAMAT : KLUTUK</P>
+            </div>
+            <div class="card">
+                <img src="noval.jpg" alt="7">
+                <h3>NOVAL ARDIANSYAH</h3>
+                <p>Kelas:  X TPM 2</p>
+                <P>NISN : 3085122743</P>
+                <P>TTL : 27-11-2008</P>
+                <P>ALAMAT : BELIKANGET</P>
+            </div>
+            <div class="card">
+                <img src="oky.jpg" alt="8">
+                <h3>OKY ANDRIYANTO ARWANSYAH</h3>
+                <p>Kelas:  X TPM 2</p>
+                <P>NISN : 0086287928</P>
+                <P>TTL : 18-10-2008</P>
+                <P>ALAMAT : GLONDONG</P>
+            </div>
+            <div class="card">
+                <img src="PRASTIYO.jpg" alt="9">
+                <h3>PRASTIYO</h3>
+                <p>Kelas:  X TPM 2</p>
+                <P>NISN : 0083720796</P>
+                <P>TTL : 11-10-2008</P>
+                <P>ALAMAT : SRIWING</P>
+            </div>
+            <div class="card">
+                <img src="RAFI.jpg" alt="10">
+                <h3>RAFIUDDIN ATHAR</h3>
+                <p>Kelas:  X TPM 2</p>
+                <P>NISN : 0097166427</P>
+                <P>TTL : 24-03-2009</P>
+                <P>ALAMAT : BANCAR</P>
+            </div>
+            <div class="card">
+                <img src="RANDY.jpg" alt="11">
+                <h3>RANDY AGUISTA HIMAWAN</h3>
+                <p>Kelas:  X TPM 2</p>
+                <P>NISN : 0089190929</P>
+                <P>TTL : 07-08-2008</P>
+                <P>ALAMAT : TRENGGALEK</P>
+            </div>
+            <div class="card">
+                <img src="RANGGA.jpg" alt="12">
+                <h3>RANGGA ADI FIRANSA</h3>
+                <p>Kelas:  X TPM 2</p>
+                <P>NISN : 0088708776</P>
+                <P>TTL : 22-10-2008</P>
+                <P>ALAMAT : MERKAWANG</P>
+            </div>
+            <div class="card">
+                <img src="rangga aditya.jpg" alt="13">
+                <h3>RANGGA ADITYA LUHUNG</h3>
+                <p>Kelas:  X TPM 2</p>
+                <P>NISN : 0081459576</P>
+                <P>TTL : 27-07-2008</P>
+                <P>ALAMAT : REMEN</P>
+            </div>
+            <div class="card">
+                <img src="rendra.jpg" alt="14">
+                <h3>RENDRA WAHYU TRI CAHYONO</h3>
+                <p>Kelas:  X TPM 2</p>
+                <P>NISN : 0087382761</P>
+                <P>TTL : 28-01-2009</P>
+                <P>ALAMAT : SOBONTORO</P>
+            </div>
+            <div class="card">
+                <img src="absen15 (1).jpg" alt="15">
+                <h3>RENO FARLID ARDIANSYAH</h3>
+                <p>Kelas:  X TPM 2</p>
+                <P>NISN : 0085978696</P>
+                <P>TTL : 13-07-2008</P>
+                <P>ALAMAT : SOCOREJO</P>
+            </div>
+            <div class="card">
+                <img src="REVANO.jpg" alt="16">
+                <p>REVANO SEPTO ARRASYID</p>
+                <p>Kelas:  X TPM 2</p>
+                <P>NISN : 0086148702</P>
+                <P>TTL : 05-09-2008</P>
+                <P>ALAMAT : SOBONTORO</P>
+            </div>
+            <div class="card">
+                <img src="riko wahyu.jpg" alt="17">
+                <h3>RIKO WAHYU FEBRYAN</h3>
+                <p>Kelas:  X TPM 2</p>
+                <P>NISN : 3094676213</P>
+                <P>TTL : 15-02-2009</P>
+                <P>ALAMAT : PASATAN</P>
+            </div>
+            <div class="card">
+                <img src="rizal.jpg" alt="18">
+                <h3>RIZAL HAMDI</h3>
+                <p>Kelas:  X TPM 2</p>
+                <P>NISN : 0098637287</P>
+                <P>TTL : 05-04-2009</P>
+                <P>ALAMAT : MARGOSUKO</P>
+            </div>
+            <div class="card">
+                <img src="ANCHA.jpg" alt="19">
+                <h3>RIZKIA DWI NUR FAJRI FEBRY ANCHA</h3>
+                <p>Kelas:  X TPM 2</p>
+                <P>NISN : 0084804754</P>
+                <P>TTL : 26-02-2008</P>
+                <P>ALAMAT : REMEN</P>
+            </div>
+            <div class="card">
+                <img src="safii.jpg" alt="20">
+                <h3>SAFI I REHAN PRATAMA</h3>
+                <p>Kelas:  X TPM 2</p>
+                <P>NISN : 0082335863</P>
+                <P>TTL : 06-10-2008</P>
+                <P>ALAMAT : TEMAYANG</P>
+            </div>
+            <div class="card">
+                <img src="sahula.jpg" alt="21">
+                <h3>SAHILA YUSDI YANDRA</h3>
+                <p>Kelas:  X TPM 2</p>
+                <P>NISN : 3084744502</P>
+                <P>TTL : 30-04-2008</P>
+                <P>ALAMAT : TEMAJI</P>
+            </div>
+            <div class="card">
+                <img src="SATRIA.jpg" alt="22">
+                <h3>SATRIA RIZALDI</h3>
+                <p>Kelas:  X TPM 2</p>
+                <P>NISN : 0086809585</P>
+                <P>TTL : 14-01-2008</P>
+                <P>ALAMAT : DIKIR</P>
+            </div>
+            <div class="card">
+                <img src="farhandika.jpg" alt="23">
+                <h3>SEPTIAN FARHANDIKA</h3>
+                <p>Kelas:  X TPM 2</p>
+                <P>NISN : 0086220546</P>
+                <P>TTL : 26-09-2008</P>
+                <P>ALAMAT : DOLOK</P>
+            </div>
+            <div class="card">
+                <img src="wibowo.jpg" alt="24">
+                <h3>SEPTIAN WIBOWO</h3>
+                <p>Kelas:  X TPM 2</p>
+                <P>NISN : 0074068018</P>
+                <P>TTL : 08-09-2008</P>
+                <P>ALAMAT : SOCOREJO</P>
+            </div>
+            <div class="card">
+                <img src="sony.jpg" alt="25">
+                <h3>SONY ADI SAPUTRA</h3>
+                <p>Kelas:  X TPM 2</p>
+                <P>NISN : 0089048590</P>
+                <P>TTL : 05-06-2008</P>
+                <P>ALAMAT : REMEN</P>
+            </div>
+            <div class="card">
+                <img src="SIGIONO.jpg" alt="26">
+                <h3>SUGIYONO</h3>
+                <p>Kelas:  X TPM 2</p>
+                <P>NISN : 0075050002</P>
+                <P>TTL : 24-12-2007</P>
+                <P>ALAMAT : TASIKHARJO</P>  
+            </div>
+            <div class="card">
+                <img src="sulton.jpg" alt="27">
+                <h3>SULTON AMIRUL MUKMIN</h3>
+                <p>Kelas:  X TPM 2</p>
+                <P>NISN : 0086070971</P>
+                <P>TTL : 29-07-2008</P>
+                <P>ALAMAT : KLABANG</P>
+            </div>
+            <div class="card">
+                <img src="aziz.jpg" alt="28">
+                <h3>SYARIFUDIN KHOIRUL AZIZ</h3>
+                <p>Kelas:  X TPM 2</p>
+                <P>NISN : 0092432383</P>
+                <P>TTL : 26-09-2009</P>
+                <P>ALAMAT : TANJANG</P>
+            </div>
+            <div class="card">
+                <img src="tri.jpg" alt="29">
+                <h3>TRI WANJUNI</h3>
+                <p>Kelas:  X TPM 2</p>
+                <P>NISN : 0063903183</P>
+                <P>TTL : 28-03-2006</P>
+                <P>ALAMAT : PURWOREJO</P>
+            </div>
+            <div class="card">
+                <img src="wisnu.jpg" alt="30">
+                <h3>WISNU FIRMANSYAH</h3>
+                <p>Kelas:  X TPM 2</p>
+                <P>NISN : 0083399531</P>
+                <P>TTL : 04-02-2008</P>
+                <P>ALAMAT : REMEN</P>
+            </div>
+            <div class="card">
+                <img src="YOGA.jpg" alt="31">
+                <h3>YOGA ADITYA</h3>
+                <p>Kelas:  X TPM 2</p>
+                <P>NISN : 0081385776</P>
+                <P>TTL : 08-07-2008</P>
+                <P>ALAMAT : SEMARANG</P>
+            </div>
+            <div class="card">
+                <img src="yogi.jpg" alt="32">
+                <h3>YOGI OKTA MAHENDRA</h3>
+                <p>Kelas:  X TPM 2</p>
+                <P>NISN : 3086082338</P>
+                <P>TTL : 10-10-2008</P>
+                <P>ALAMAT : KANDANG</P>
+            </div>
+            <div class="card">
+                <img src="yovi.jpg" alt="33">
+                <h3>YOVI ALDO FERDIANSYAH</h3>
+                <p>Kelas:  X TPM 2</p>
+                <P>NISN : 3085594255</P>
+                <P>TTL : 28-11-2008</P>
+                <P>ALAMAT : KANDANG</P>
+            </div>
+            <div class="card">
+                <img src="yusuf.jpg" alt="34">
+                <h3>YUSUF ILMI AINURROHMAN</h3>
+                <p>Kelas:  X TPM 2</p>
+                <P>NISN : 0098711755</P>
+                <P>TTL : 19-04-2009</P>
+                <P>ALAMAT : TASIKHARJO</P>
+            </div>
+            <div class="card">
+                <img src="zaeni.jpg" alt="35">
+                <h3>ZAENI AHMAD RIDHO SANTOSO</h3>
+                <p>Kelas:  X TPM 2</p>
+                <P>NISN : 0098290133</P>
+                <P>TTL : 20-05-2009</P>
+                <P>ALAMAT : PURWOREJO</P>
+            </div>
+            <div class="card">
+                <img src="zanuar.jpg" alt="36">
+                <h3>ZANUAR ADITYA PRATAMA</h3>
+                <p>Kelas:  X TPM 2</p>
+                <P>NISN : 0099205175</P>
+                <P>TTL : 01-01-2009</P>
+                <P>ALAMAT : SOBONTORO</P>
+            </div>
+            </div>
+
+        <div id="guruCards" class="card-container">
+            <div class="card">
+                <img src="ANTONI.jpeg" alt="Foto Ahmad Zainuri">
+                <h3>Pak Anthony Salim Masrikan</h3>
+                <p>TTL: 20-07-1993</p>
+                <P>ALAMAT: KUDUS</P>
+                <p>JABATAN: Guru Produktif Pilihan TPM</p>
+            </div>
+            <div class="card">
+                <img src="pakbul.jpg" alt="Foto Ainun Nisa">
+                <h3>Pak Khotibul Umam</h3>
+                <p>TTL: 1991-08-12</p>
+                <P>ALAMAT: TUBAN</P>
+                <p>Jabatan: Guru Produktif Pilihan TPM</p>
+            </div>
+            <div class="card">
+                <img src="AGUS.jpeg" alt="Foto Nuranisah">
+                <h3>Pak Agus Setiyono</h3>
+                <p>TTL: 1987-08-19</p>
+                <P>ALAMAT: TUBAN</P>
+                <p>Jabatan: Guru Pjok</p>
+            </div>
+            <div class="card">
+                <img src="SOFA.jpeg" alt="Foto Nuranisah">
+                <h3>Pak Hidayatul Mushoffa</h3>
+                <p>TTL: 1991-05-24</p>
+                <P>ALAMAT: TUBAN</P>
+                <p>Jabatan: Guru Bahasa Indonesia</p>
+            </div>
+            <div class="card">
+                <img src="tutik.jpg" alt="Foto Nuranisah">
+                <h3>Bu Tutik Karlina</h3>
+                <p>TTL: 1992-02-15</p>
+                <P>ALAMAT: TUBAN</P>
+                <p>Jabatan: Guru Sejarah</p>
+            </div>
+            <div class="card">
+                <img src="CANDRA.jpeg" alt="Foto Nuranisah">
+                <h3>Bu Candra Wulandari</h3>
+                <p>TTL: 1992-10-04</p>
+                <P>ALAMAT: TUBAN</P>
+                <p>Jabatan: Guru Matematika</p>
+            </div>
+            <div class="card">
+                <img src="muhumatul.jpg" alt="Foto Nuranisah">
+                <h3>Bu Muhimatul Ifadah</h3>
+                <p>TTL:1992-08-09</p>
+                <P>ALAMAT: KAYEN</P>
+                <p>Jabatan: Guru Bahasa Inggris</p>
+            </div>
+            <div class="card">
+                <img src="WAHYU.jpeg" alt="Foto Nuranisah">
+                <h3>Bu Siti Wahyuningsih</h3>
+                <p>TTL: 1995-05-04</p>
+                <P>ALAMAT: TUBAN</P>
+                <p>Jabatan: Guru PPKN</p>
+            </div>
+            <div class="card">
+                <img src="YULIA.jpeg" alt="Foto Nuranisah">
+                <h3>Bu Yulia Suci Lusiana</h3>
+                <p>TTL: 1983-07-10</p>
+                <P>ALAMAT: MAGELANG</P>
+                <p>Jabatan: Guru BK</p>
+            </div>
+            <div class="card">
+                <img src="ROHMATUS.jpeg" alt="Foto Nuranisah">
+                <h3>Bu Rohimatus Sholihah</h3>
+                <p>TTL: 1989-04-08</p>
+                <P>ALAMAT: TUBAN</P>
+                <p>Jabatan: Guru PAI</p>
+            </div>
+            <div class="card">
+                <img src="suwarno.jpeg" alt="Foto Nuranisah">
+                <h3>Pak Suwarno</h3>
+                <p>TTL: 1979-02-05</p>
+                <P>ALAMAT: TUBAN</P>
+                <p>Jabatan: Guru Informatika</p>
+            </div>
+            <div class="card">
+                <img src="YUNI.jpeg" alt="Foto Nuranisah">
+                <h3>BU Yuni Ponco H.</h3>
+                <p>TTL: 1979-06-07</p>
+                <P>ALAMAT: BLORA</P>
+                <p>Jabatan: Guru IPAS</p>
+            </div>
+            <div class="card">
+                <img src="RIDA.jpeg" alt="Foto Nuranisah">
+                <h3>Bu Ridha Novita Sari</h3>
+                <p>TTL: 1994-01-12</p>
+                <P>ALAMAT: TUBAN</P>
+                <p>Jabatan: Guru Bahasa Jawa</p>
+            </div>
+            <div class="card">
+                <img src="juangga.jpg" alt="Foto Nuranisah">
+                <h3>Bu Juangga Nanda Putri Sisrivanni</h3>
+                <p>TTL: 1991-01-15</p>
+                <P>ALAMAT: TUBAN</P>
+                <p>Jabatan: Guru Seni</p>
+            </div>
+        </div>
+
+        <div id="piketCards" class="card-container">
+            <div class="card">
+                <h3>Senin</h3>
+                <p> Iqbal</p>
+                <p> Faiz</p>
+                <p> Luthfi</p>
+                <p> Mahfudz</p>
+                <p> Sahrul nizam</p>
+                <p> Zainal abidin</p>
+            </div>
+            <div class="card">
+                <h3>Selasa</h3>
+                <p> Noval</p>
+                <p> Oky</p>
+                <p> Pras</p>
+                <p> Athar</p>
+                <p> Randy</p>
+                <p> Rangga adi</p>
+            </div>
+            <div class="card">
+                <h3>Rabu</h3>
+                <p> Rangga aditya</p>
+                <p> Rendra</p>
+                <p> Reno</p>
+                <p> Revano</p>
+                <p> Rizal hamdi</p>
+                <p> Safi i rehan</p>
+            </div>
+            <div class="card">
+                <h3>Kamis</h3>
+                <p> Sahila</p>
+                <p> Septian farhandika</p>
+                <p> Septian wibowo</p>
+                <p> Sugiyono</p>
+                <p> Sulton </p>
+                <p> Syarifudin</p>
+           </div>
+           <div class="card">
+                <h3>Jumat</h3>
+                <p> Yoga aditya</p>
+                <p> Yogi okta</p>
+                <p> Yovi aldo</p>
+                <p> Zaeni</p>
+                <p> Zanuar</p>
+                <p> Yusuf</p>
+           </div>
+        </div>
+
+        <div id="strukturCards" class="card-container">
+                <img src="Brown and Beige Minimalist Corporate Organization Structure Graph (1).png" alt="Foto Kegiatan 1">
+        </div>
+        <div id="gallery" class="gallery">
+            <img src="gedung tpm.jpg" alt="Foto Kegiatan 1">
+            <img src="TPM1.jpg" alt="Foto Kegiatan 2">
+            <img src="TPM 2.jpg" alt="Foto Kegiatan 3">
+        </div>
+
+        <div id="jadwalPelajaran" class="card-container">
+            <table>
+                <tr>
+                    <th>SENIN</th>
+                    <th>SELASA</th>
+                    <th>RABU</th>
+                    <th>KAMIS</th>
+                    <th>JUMAT</th>
+                </tr>
+                <tr>
+                    <td>PENJAS</td>
+                    <td>MTK</td>
+                    <td>PRODUKTIF</td>
+                    <td>BIN</td>
+                    <td>INFORMATIKA</td>
+                </tr>
+                <tr>
+                    <td>BIN</td>
+                    <td>IPAS</td>
+                    <td>PRODUKTIF</td>
+                    <td>PRODUKTIF</td>
+                    <td>PAI</td>
+                </tr>
+                <tr>
+                    <td>IPAS</td>
+                    <td>B.JAWA</td>
+                    <td></td>
+                    <td>BIG</td>
+                    <td>BK</td>
+                </tr>
+                <tr>
+                    <td>BIG</td>
+                    <td>INFORMATIKA</td>
+                    <td></td>
+                    <td>MTK</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>PPKN</td>
+                    <td></td>
+                    <td>SEJARAH</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>SENI</td>
+                    <td></td>
+
+                </tr>
+            </table>
+        </div>
+
+        <div id="kegiatanKelas" class="container">
+            <table>
+                <tr>
+                    <th>Kegiatan</th>
+                    <th>Deskripsi</th>
+                </tr>
+                <tr>
+                    <td>Kegiatan puncak p5</td>
+                    <td>Acara lomba senam mewakili setiap kelas</td>
+                </tr>
+                <tr>
+                    <td>Pramuka</td>
+                    <td>pramuka setiap hari jumat 2 minggu sekali </td>
+                </tr>
+                <tr>
+                    <td>Jumat religius</td>
+                    <td>dilakukan bergantian dengan kakel  </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
